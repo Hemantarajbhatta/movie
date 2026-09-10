@@ -1,0 +1,241 @@
+.movie-detail-page {
+  min-height: calc(100vh - 80px);
+  background-color: var(--bg-dark);
+}
+
+.detail-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 5%;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #0f1014 0%, rgba(15,16,20,0.8) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.hero-poster-wrapper {
+  width: 250px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transform: translateY(4rem);
+  border: 4px solid var(--bg-dark);
+}
+
+.hero-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-info {
+  flex: 1;
+  padding-bottom: 2rem;
+}
+
+.hero-info h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.meta-tags span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.genres {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.genre-pill {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  max-width: 800px;
+}
+
+/* Showtimes Section */
+.showtimes-section {
+  max-width: 1400px;
+  margin: 4rem auto 0;
+  padding: 4rem 5%;
+}
+
+.showtimes-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  padding-left: 280px; /* offset for the poster */
+}
+
+.cinemas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 280px;
+}
+
+.cinema-block {
+  background: var(--bg-panel-light);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.cinema-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.cinema-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.cinema-header p {
+  color: var(--text-secondary);
+}
+
+.shows-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.show-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.show-pill:hover {
+  background: #1da1f2;
+  border-color: #1da1f2;
+  transform: translateY(-2px);
+}
+
+.show-time {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.show-type {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.show-pill:hover .show-type {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-poster-wrapper {
+    transform: translateY(2rem);
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+  .meta-tags, .genres {
+    justify-content: center;
+  }
+  .showtimes-section h2, .cinemas-list {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-info h1 {
+    font-size: 2.2rem;
+  }
+  .detail-hero {
+    padding: 2rem 5%;
+    height: auto;
+    min-height: auto;
+    padding-top: 6rem;
+  }
+  .hero-poster-wrapper {
+    transform: translateY(0);
+    width: 160px;
+  }
+  .showtimes-section {
+    margin: 2rem auto 0;
+    padding: 2rem 5%;
+  }
+  .meta-tags {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .cinema-block {
+    padding: 1.5rem;
+  }
+}

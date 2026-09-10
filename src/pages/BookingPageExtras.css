@@ -1,0 +1,14 @@
+.s-btn.vip {
+  border-bottom-color: #ef4444; /* Red for VIP */
+}
+.s-btn.premium {
+  border-bottom-color: #f59e0b; /* Orange for Premium */
+}
+
+/* Also ensure the legend colors are updated if needed */
+.l-box.vip {
+  border-bottom-color: #ef4444 !important;
+}
+.l-box.premium {
+  border-bottom-color: #f59e0b !important;
+}

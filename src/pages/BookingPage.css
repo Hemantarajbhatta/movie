@@ -1,0 +1,542 @@
+.zootopia-booking-container {
+  min-height: 100vh;
+  background-color: #0d1219; /* Very dark slate blue/black */
+  color: #fff;
+  padding: 1rem;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-inner-wrapper {
+  width: 100%;
+  max-width: 1500px;
+  background: linear-gradient(135deg, #101620 0%, #0d1219 100%);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* TOP NAVBAR */
+.zootopia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.icon-box:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.filter-pill {
+  background: rgba(255,255,255,0.05);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+}
+
+.filter-pill.outline {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5);
+}
+
+.rotate-down { transform: rotate(90deg); }
+.rotate-up { transform: rotate(-90deg); }
+.ml-icon { opacity: 0.5; margin-left: 0.2rem; }
+
+.header-center .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255,255,255,0.05);
+  padding: 0.3rem 0.5rem 0.3rem 0.3rem;
+  border-radius: 30px;
+  color: #fff;
+}
+
+.user-profile-btn img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* MAIN CONTENT */
+.zootopia-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+/* --- LEFT PANEL --- */
+.zootopia-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Dates */
+.date-carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.calendar-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dates-list {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: hidden;
+  flex: 1;
+}
+
+.date-box {
+  flex: 1;
+  min-width: 70px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  transition: all 0.2s;
+}
+
+.date-box.active {
+  background: linear-gradient(180deg, #1d4ed8 0%, #1e3a8a 100%); /* Deep blue gradient */
+  border-color: #3b82f6;
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(29, 78, 216, 0.3);
+}
+
+.day-name { font-size: 0.75rem; margin-bottom: 0.2rem; }
+.day-num { font-size: 1.1rem; font-weight: 600; }
+
+.carousel-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.nav-arrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Movie Info */
+.movie-details-block {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.poster-wrapper {
+  position: relative;
+  width: 180px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.main-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.poster-play-btn {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+}
+
+.movie-info-text {
+  flex: 1;
+}
+
+.movie-info-text h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.movie-meta {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.movie-desc {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.movie-ratings {
+  display: flex;
+  gap: 2rem;
+}
+
+.rating-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.r-label {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem;
+}
+
+.r-val {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Times */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.times-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.time-pill {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.time-pill span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-left: 0.2rem;
+}
+
+.time-pill.active {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.time-pill.active span {
+  color: #3b82f6;
+}
+
+/* Selected Tickets */
+.tickets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ticket-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.t-seat {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+}
+.t-seat strong {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.t-price {
+  color: rgba(255,255,255,0.7);
+  font-weight: 500;
+}
+
+.t-remove {
+  color: rgba(255,255,255,0.3);
+  padding: 0.2rem;
+}
+.t-remove:hover { color: #fff; }
+
+.empty-tickets {
+  grid-column: 1 / -1;
+  color: rgba(255,255,255,0.3);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Footer */
+.booking-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.total-display {
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+}
+.total-display span {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 0.5rem;
+}
+
+.buy-action-btn {
+  background: #3b82f6;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+.buy-action-btn:hover:not(:disabled) {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+}
+.buy-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- RIGHT PANEL --- */
+.zootopia-right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.01);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.screen-wrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+  width: 80%;
+}
+
+.screen-curve {
+  height: 20px;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  box-shadow: 0 -20px 30px rgba(59, 130, 246, 0.2);
+  margin-bottom: 1rem;
+}
+
+.screen-text {
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.seat-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.grid-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.r-indicator {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.85rem;
+  width: 15px;
+}
+
+.grid-seats {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.s-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  color: transparent; /* hide numbers normally */
+}
+.s-btn:hover:not(.booked) {
+  color: #fff;
+}
+
+/* Base styles for the dark Zootopia map */
+.s-btn.available {
+  background: #1e293b;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.s-btn.available:hover {
+  background: #334155;
+  transform: translateY(-2px);
+}
+
+.s-btn.selected {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.s-btn.booked {
+  background: #0f172a;
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.seat-legend-block {
+  display: flex;
+  gap: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 2rem;
+}
+
+.l-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+}
+
+.l-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.l-box.selected { background: #3b82f6; }
+.l-box.available { background: #1e293b; }
+.l-box.booked { background: #0f172a; opacity: 0.5; }
+
+/* Adding the gap in the middle of seats (like an aisle) */
+.grid-seats button:nth-child(4),
+.grid-seats button:nth-child(12) {
+  margin-right: 1.5rem;
+}
+
+@media (max-width: 1200px) {
+  .zootopia-main { grid-template-columns: 1fr; }
+  .zootopia-right-panel { order: -1; } /* move screen to top on mobile */
+  .grid-seats button:nth-child(4),
+  .grid-seats button:nth-child(12) { margin-right: 0.5rem; }
+  .s-btn { width: 22px; height: 22px; font-size: 0.6rem; }
+}
+
+@media (max-width: 768px) {
+  .zootopia-main { padding: 1rem; gap: 1.5rem; }
+  .booking-inner-wrapper { border-radius: 16px; }
+  .movie-details-block { flex-direction: column; align-items: center; text-align: center; }
+  .poster-wrapper { width: 140px; margin-bottom: 1rem; }
+  .movie-ratings { justify-content: center; }
+  .times-row { flex-wrap: wrap; }
+  .seat-grid-container { overflow-x: auto; padding-bottom: 1rem; width: 100%; align-items: center; }
+  .s-btn { width: 26px; height: 26px; font-size: 0.65rem; }
+  .grid-row { gap: 0.5rem; }
+  .seat-legend-block { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  .tickets-grid { grid-template-columns: 1fr; }
+  .zootopia-header { padding: 1rem; flex-wrap: wrap; gap: 1rem; justify-content: space-between; }
+  .header-left, .header-right { gap: 0.5rem; }
+  .date-carousel { overflow-x: auto; padding-bottom: 0.5rem; }
+}

@@ -1,0 +1,113 @@
+.movies-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+.movies-header {
+  margin-bottom: 3rem;
+}
+
+.movies-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.movies-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: var(--bg-panel-light);
+  border: 1px solid var(--glass-border);
+  border-radius: 30px;
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-bar input {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  margin-left: 0.8rem;
+}
+
+.genre-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.filter-btn {
+  background: var(--bg-panel-light);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: #1da1f2;
+  border-color: #1da1f2;
+  color: white;
+}
+
+.movies-grid-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2.5rem 2rem;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  background: var(--bg-panel-light);
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+}
+
+@media (max-width: 768px) {
+  .movies-page-container {
+    padding: 1.5rem 1rem;
+  }
+  .movies-header h1 {
+    font-size: 2.2rem;
+  }
+  .movies-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-bar {
+    max-width: 100%;
+  }
+  .movies-grid-full {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1.5rem 1rem;
+  }
+}
